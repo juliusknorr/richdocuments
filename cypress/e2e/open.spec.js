@@ -38,8 +38,6 @@ describe('Open existing office files', function() {
 
 			cy.waitForPostMessage('App_LoadingStatus', { Status: 'Document_Loaded' })
 
-			// Share action
-			cy.wait(2000)
 			cy.get('@loleafletframe').within(() => {
 				cy.verifyOpen(filename)
 			})

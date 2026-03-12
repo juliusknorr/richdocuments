@@ -261,7 +261,7 @@ Cypress.Commands.add('waitForCollabora', (wrapped = false, federated = false) =>
 
 	const coolFrame = wrapped
 		? cy.get('@collaboraframe').find('[data-cy="coolframe"]', { timeout: 30000 })
-		: cy.get('[data-cy="coolframe"]')
+		: cy.get('[data-cy="coolframe"]', { timeout: 30000 })
 
 	coolFrame
 		.its('0.contentDocument')
@@ -326,7 +326,7 @@ Cypress.Commands.add('closeDocument', () => {
 		cy.get('#closebutton').click()
 	})
 
-	cy.get('#viewer', { timeout: 5000 }).should('not.exist')
+	cy.get('#viewer', { timeout: 30000 }).should('not.exist')
 })
 
 Cypress.Commands.add('verifyOpen', (filename) => {

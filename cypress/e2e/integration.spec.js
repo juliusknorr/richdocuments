@@ -97,8 +97,8 @@ describe('Nextcloud integration', function() {
 
 		cy.get('@loleafletframe').within(() => {
 			cy.get('#closebutton').click()
-			cy.waitForViewerClose()
 		})
+		cy.waitForViewerClose()
 
 		cy.openFile(exportFilename)
 	})

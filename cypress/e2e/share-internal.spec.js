@@ -38,8 +38,8 @@ describe('File sharing of office documents', function() {
 		// Validate closing
 		cy.get('@loleafletframe').within(() => {
 			cy.get('#closebutton').click()
-			cy.waitForViewerClose()
 		})
+		cy.waitForViewerClose()
 	})
 
 	it('Open a shared file as readonly', function() {
@@ -61,7 +61,7 @@ describe('File sharing of office documents', function() {
 		// Validate closing
 		cy.get('@loleafletframe').within(() => {
 			cy.get('#closebutton').click()
-			cy.waitForViewerClose()
 		})
+		cy.waitForViewerClose()
 	})
 })
