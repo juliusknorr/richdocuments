@@ -146,6 +146,6 @@ function waitForCollabora() {
 
 	cy.get('@loleafletframe').within(() => {
 		cy.get('#closebutton').click()
-		cy.waitForViewerClose()
 	})
+	cy.waitForViewerClose()
 }

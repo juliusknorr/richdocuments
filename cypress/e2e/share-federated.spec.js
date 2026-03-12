@@ -33,10 +33,11 @@ describe('Federated sharing of office documents', function() {
 		})
 		cy.openFile(filename)
 		cy.waitForViewer()
-		cy.waitForCollabora(true, true).within(() => {
+		cy.waitForCollabora(true, true)
+		cy.get('@loleafletframe').within(() => {
 			cy.get('#closebutton').click()
-			cy.waitForViewerClose()
 		})
+		cy.waitForViewerClose()
 	})
 
 	it.skip('Open a remotely shared file as a link', function() {
@@ -79,10 +80,11 @@ describe('Federated sharing of office documents', function() {
 
 				cy.openFile(filename)
 				cy.waitForViewer()
-				cy.waitForCollabora(true, true).within(() => {
+				cy.waitForCollabora(true, true)
+				cy.get('@loleafletframe').within(() => {
 					cy.get('#closebutton').click()
-					cy.waitForViewerClose()
 				})
+				cy.waitForViewerClose()
 			})
 		})
 	})
